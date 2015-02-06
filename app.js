@@ -1,6 +1,6 @@
 Titanium.UI.setBackgroundColor('#302226');
 var win = Titanium.UI.createWindow({
-    title:"",
+    title:"StopWatch",
     backgroundColor:"#302226",
     exitOnClose: true 
 });
@@ -42,7 +42,7 @@ var seclabel = Titanium.UI.createLabel({
 });
  
 var button01 = Titanium.UI.createButton({
-   title: 'START',
+   title: 'Start',
    top: 90,
    left: 10,
    width: 100,
@@ -50,7 +50,7 @@ var button01 = Titanium.UI.createButton({
 });
  
 var button02 = Titanium.UI.createButton({
-    title:'RESET',
+    title:'Reset',
     top: 90,
     right: 10,
     width: 100,
@@ -58,7 +58,7 @@ var button02 = Titanium.UI.createButton({
 });
  
 var button03 = Titanium.UI.createButton({
-    title:'STOP',
+    title:'Stop',
     top: 90,
     left: 110,
     width: 100,
