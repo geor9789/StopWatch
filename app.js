@@ -41,7 +41,7 @@ var seclabel = Titanium.UI.createLabel({
     right: 105,
 });
  
-var button01 = Titanium.UI.createButton({
+var startButton = Titanium.UI.createButton({
    title: 'Start',
    top: 90,
    left: 10,
@@ -49,15 +49,7 @@ var button01 = Titanium.UI.createButton({
    height: 50 
 });
  
-var button02 = Titanium.UI.createButton({
-    title:'Reset',
-    top: 90,
-    right: 10,
-    width: 100,
-    height: 50
-});
- 
-var button03 = Titanium.UI.createButton({
+ var stopButton = Titanium.UI.createButton({
     title:'Stop',
     top: 90,
     left: 110,
@@ -65,9 +57,16 @@ var button03 = Titanium.UI.createButton({
     height: 50
 });
  
+var resetButton = Titanium.UI.createButton({
+    title:'Reset',
+    top: 90,
+    right: 10,
+    width: 100,
+    height: 50
+});
+ 
 var _startStopwatch = function() {
     
- 
 var startTime = new Date();
  
 var _updateTimer = function updateTimer() {
@@ -93,14 +92,14 @@ var _updateTimer = function updateTimer() {
     var started = false;
     var intervalid = null;
  
-button01.addEventListener("click", function(e){
+startButton.addEventListener("click", function(e){
     if (!started) {
         _startStopwatch();
         started = true;
       } 
 });
  
-button02.addEventListener("click", function(e){
+resetButton.addEventListener("click", function(e){
     if (started) {
         _stopStopwatch();
         started = false;
@@ -109,7 +108,7 @@ button02.addEventListener("click", function(e){
  
 });
  
-button03.addEventListener("click", function(e){
+stopButton.addEventListener("click", function(e){
     if (started){    
     _stopStopwatch();
     started = false;
@@ -117,9 +116,9 @@ button03.addEventListener("click", function(e){
 });
  
 win.add(view01);
-win.add(button01);
-win.add(button02);
-win.add(button03);
+win.add(startButton);
+win.add(resetButton);
+win.add(stopButton);
 win.add(timerlabel);
 win.add(hourlabel);
 win.add(minlabel);
